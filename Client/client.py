@@ -36,9 +36,11 @@ class GUI:
         self.entryName.place(relwidth=0.6, relheight=0.1, relx=0.2, rely=0.4)  # Adjust the size and position
         self.entryName.focus()
 
-        self.go = tk.Button(self.login, text="Kết nối!", bg="#F5F5F5", font="Helvetica 20 bold",
+        imageConnect = tk.PhotoImage(file="./images/connect.png")
+        self.go = tk.Button(self.login, text="Kết nối!", bg="#F5F5F5", font="Helvetica 20 bold", image=imageConnect, height=60, width=180,
                             command=lambda: self.ConnectServer(self.entryName.get()), bd=5, activebackground='grey')
         self.go.place(relx=0.4, rely=0.55)
+        self.go.image = imageConnect
 
     #function to turn off window
     def shutdown(self, client):
